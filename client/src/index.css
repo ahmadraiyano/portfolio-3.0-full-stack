@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Blueprint / drafting-sheet palette ---- */
+  --color-navy-950: #081827;
+  --color-navy-900: #0e2a47;
+  --color-navy-800: #123356;
+  --color-navy-700: #1c4670;
+  --color-navy-600: #2c5c8f;
+
+  --color-line-dark: #2c4a6e;
+  --color-line-dark-soft: #1e3a5c;
+
+  --color-paper: #f5f6f1;
+  --color-paper-dim: #eceee6;
+  --color-ink: #15191d;
+  --color-ink-soft: #545e5a;
+
+  --color-line-light: #d9ded2;
+
+  --color-amber: #e3a857;
+  --color-amber-dark: #c4823a;
+  --color-teal: #4fb3a4;
+  --color-teal-dark: #35867a;
+
+  /* ---- Type ---- */
+  --font-display: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* ---- Layout ---- */
+  --breakpoint-xs: 26rem;
+}
+
+@layer base {
+  * {
+    @apply border-line-light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-ink font-body antialiased;
+  }
+
+  ::selection {
+    @apply bg-amber/30 text-ink;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-amber-dark);
+    outline-offset: 3px;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .input {
+    @apply w-full border border-line-light bg-white px-4 py-2.5 text-sm text-ink placeholder:text-ink-soft/50 focus:border-amber-dark focus:outline-none;
+  }
+}
+
+@layer utilities {
+  /* Faint blueprint grid, used sparingly on dark sections */
+  .bp-grid-dark {
+    background-image:
+      linear-gradient(to right, rgba(217, 222, 210, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(217, 222, 210, 0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .bp-grid-light {
+    background-image:
+      linear-gradient(to right, rgba(21, 25, 29, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(21, 25, 29, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

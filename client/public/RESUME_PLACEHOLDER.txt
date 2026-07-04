@@ -1,0 +1,4 @@
+Put your resume PDF at client/public/resume.pdf (exact name), or update
+personalInfo.resumeUrl in src/data/personalInfo.js to point elsewhere.
+The Hero section's "Download Resume" button already links here — it will
+start working the moment the file exists.
