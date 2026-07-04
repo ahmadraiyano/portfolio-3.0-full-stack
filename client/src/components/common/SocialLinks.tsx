@@ -2,8 +2,14 @@ import { Github, Linkedin, Facebook, Link as LinkIcon, type LucideIcon } from 'l
 import { FaXTwitter } from "react-icons/fa6";
 import socialLinks from '@/data/socialLinks';
 import type { SocialLink } from '@/types';
+import type { IconType } from "react-icons";
 
-const ICONS: Record<SocialLink['icon'], LucideIcon> = { Github, Linkedin, FaXTwitter, Facebook };
+const ICONS: Record<SocialLink["icon"], LucideIcon | IconType> = {
+  Github,
+  Linkedin,
+  FaXTwitter,
+  Facebook,
+};
 
 interface SocialLinksProps {
   tone?: 'light' | 'dark';

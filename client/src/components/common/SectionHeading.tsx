@@ -11,7 +11,7 @@ interface SectionHeadingProps {
  * followed by a hairline rule. `index` is the two-digit figure number.
  */
 export default function SectionHeading({
-  index,
+  // index,
   eyebrow,
   title,
   description,
